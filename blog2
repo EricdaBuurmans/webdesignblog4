@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Blog Homepage</title>
+    <!-- <link href="styles.css" rel="stylesheet" type="text/css" -->
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #2b2b2b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        #banner {
+            background-color: #5b73ad;
+            color: #fff;
+            text-align: center;
+            padding-bottom: 20px ;
+            padding-top: 20px ;
+            width: 100%;
+            box-shadow: 5px 5px 10px #0e0e0e;
+        }
+        
+        #navigation {
+            background-color: #464646;
+            color: #fff;
+            width: 20%;
+            padding: 20px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 5px 5px 10px #0e0e0e;
+        }
+        
+        #content {
+            
+            background-color: #666666;
+            width: 80%;
+            padding: 20px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 5px 5px 10px #0e0e0e;
+        }
+        
+        .week-button {
+            display: block;
+            text-decoration: none;
+            background-color: #676767;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 5px 0;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .week-button:hover {
+            transform: scale(1.1)
+           
+
+        }
+        
+        .week-button:hover {
+            background-color: #3968d7;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+        }
+        
+        .week-box {
+            background-color: #eaeaea;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px #515151;
+            display: none;
+           
+            
+        }
+        
+        .title {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .subheading {
+            font-size: 18px;
+            color: #777;
+            margin: 5px 0;
+        }
+        
+        .content-image {
+            max-width: 100%;
+            height: auto;
+        }
+        </style>
+    <script>
+        function showWeek(week) {
+            // Hide all week boxes
+            const weekBoxes = document.querySelectorAll('.week-box');
+            weekBoxes.forEach(box => box.style.display = 'none');
+
+            // Show the selected week
+            const selectedWeek = document.getElementById(`week-${week}`);
+            if (selectedWeek) {
+                selectedWeek.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="banner">
+        <h1>IXXN 221 Weekly Journals</h1>
+        <p>Select a week below to begin.</p>
+    </div>
+    <div id="container">
+        <div id="navigation">
+            <h2>Class Weeks</h2>
+            <a class="week-button" onclick="showWeek(1)">Week 1</a>
+            <a class="week-button" onclick="showWeek(2)">Week 2</a>
+            <a class="week-button" onclick="showWeek(3)">Week 3</a>
+            <a class="week-button" onclick="showWeek(4)">Week 4</a>
+            <a class="week-button" onclick="showWeek(5)">Week 5</a>
+            <a class="week-button" onclick="showWeek(6)">Week 6</a>
+            <a class="week-button" onclick="showWeek(7)">Week 7</a>
+            <a class="week-button" onclick="showWeek(8)">Week 8</a>
+            <a class="week-button" onclick="showWeek(9)">Week 9</a>
+            <a class="week-button" onclick="showWeek(10)">Week 10</a>
+            <a class="week-button" onclick="showWeek(11)">Week 11</a>
+            <a class="week-button" onclick="showWeek(12)">Week 12</a>
+            <!-- Add buttons for all 12 weeks -->
+        </div>
+        <div id="content">
+            <div class="week-box" id="week-1">
+                <h3 class="title">Week 1</h3>
+                <p class="subheading">11th July -  Ice Breaker</p>
+                <img src="ice.avif" alt="Workshop activity" style="width: 600px; height: 600px;">
+                <p>During the initial week of our web design course, we were introduced to our tutors: Haowei, Shiv, and Jamie. In our introductory tutorial, we delved into how the course changed over time, noting how it transitioned from a primarily coding-centric approach in 2020 to its current-day focus on design. The lecture started by revisiting the course assignments. We were introduced to some of assignment 1. We were then shown exemplars of previous students' work, this helped me create a vision for what my project could eventually look like. Throughout the tutorial, we were encouraged to familiarize ourselves with Webflow and even had the opportunity to view a concise introductory course on the platform. I was interested to see us using services such as WebFlow as I assumed the course would be fully html/css based. I was excited by the change as many design companies use WebFlow regularly. They often also use tools like WebFlow as a benchmark of web design knowledge for young designers.</p>
+            </div>
+            <div class="week-box" id="week-2">
+                <h3 class="title">Week 2</h3>
+                <p class="subheading">18th July - Understanding Users</p>
+                <img src="persona.png" class="content-image" alt="Week 2 Image">
+                <p>This week we were introduced to our first assignment which was the research report. We learnt about why its so crucial to understand your users first before diving headfirst into the design. We learnt that our designs are dictated by the kinds of people accessing them and we need to keep every relevant aspect of them, their needs, and their personalities in mind when designing a service (e.g website). After refining the kind of person/user persona that we are targeting for our website, we need to figure out how we will address a certain problem that the user has that the site aims to solve. For my report, I knew I'd have the easiest time basing my user around some of my own experiences. For this reason I knew from the start of the project that I wanted to make my user persona a designer, and aim to solve some of the small problems that arise within my design process. In order to solve a user's problem effectively, you need to be able to step into their shoes and empathise with their frustrations. <br> </br>                    During this week we also learnt about the beginning stages of web design and how things like different fonts and images came into play and shaped web design. This helped me learn about the foundation websites are made of and particularly the importance of aesthetics in today's digital landscape. I also learnt some of the basics with writing html code.
+</p>
+            </div>
+            <div class="week-box" id="week-3">
+                <h3 class="title">Week 3</h3>
+                <p class="subheading">25th July - Goals</p>
+                <img src="stats.png" class="content-image" alt="Week 2 Image">
+                <p>In this week's lecture, we learnt about the development of web design from 1998 to 2008 and how the modernisation of websites really started to come together around this time. This was due to a lot of technological advancements such as the introduction of scalable vector graphics (SVGs). more room for personalisation, responsive web design, and social media platforms. The Google Analytics platform was also published during this time which helped give easy access to specific website statistics. This was super useful information for website owners as they could then optimise their site for more clicks and see what kind of designs are preferred by users in a quantitative way. This is a major turning point in web design and is the backbone for why I think websites are now shaped/packaged in the ways we see them today. Here we lose some our individuality from site to site, but the overall online experience is far superior with websites all working in similar ways.<br> </br>  Further on in the lecture we learnt about venn diagrams and how we can use them in our projects to identify common ground between designer goals and user goals. This is important in web design as the outcome (common goals) gives us a great framework for exactly the kind of project we will be undertaking in order to solve the user persona's problems.   </p>
+            </div>
+            <div class="week-box" id="week-4">
+                <h3 class="title">Week 4</h3>
+                <p class="subheading">1st August - Journey Maps & User Flow</p>
+                <img src="oldweb.png" class="content-image" alt="Week 2 Image">
+                <p>The tutorial continued with the development of web design, this time leading us from 2009 to the present day. The lecture went over how much of the technologies and services we've been using and will continue to use such as Figma were only very recently created. It really put things into perspective of how quickly the web design industry has moved in the past decade and how we are currently riding the wave of golden age web design. <br> </br> Next we went into customer journey maps for our assignment and how they can help designers connect with a user base. Customer journey maps have multiple components that help with this such as stages within an experience and the emotions and thought processes that come with them. Customer journey maps are part of the toolset that UX designers use to bridge the gap in the designer-user relationship. As I see it, they force the designer to sit down and run through the user's step by step process, and keep the thought process really detailed. This is crucial when aiming for a streamlined user experience. <br> </br> The coding lecture went over simple HTML and CSS, leading us to create a super simple website complete with headings, paragraphs, and images - the building blocks of all web design.</p>
+            </div>
+            <div class="week-box" id="week-5">
+                <h3 class="title">Week 5</h3>
+                <p class="subheading">8th August - CSS Grids & Assignment 1 Details</p>
+                <img src="cssgrid.png" class="content-image" alt="Week 2 Image">
+                <p>This week we learnt about grid formatting and flex boxes in html. Grid formatting is very important for web design as it is useful for keeping the sizes of elements relative and responsive for all screen sizes. Using grids is a good way of structuring both the aesthetic of your website, and your development of it. Since the grid system keeps elements structured and consistent, it can make it much easier to come back to your code and tinker with specific parts of them as they are broken down into groups. Grid-based web design is useful for both the aesthetic and functional aspects of a website and we learnt that it is one of the staples of web design practice. It was interesting to break websites down into blocks and I started seeing different structures some of the websites I use on a regular basis utilise. </p>
+            </div>
+            <div class="week-box" id="week-6">
+                <h3 class="title">Week 6</h3>
+                <p class="subheading">15th August - Assignemnt 2.1, Colour & Typography</p>
+                <img src="github.png" class="content-image" alt="Week 2 Image">
+                <p>This week we would be looking into starting our Assignment 2. We were asked to reflect on our assignment 1 to ensure we kept the same thought process linking the projects. I find this an important exercise for keeping my work coherent and more like a practical, real-world project. We then went into the specifics of the assignment, emphasizing the importance of wireframing and getting all of the planning right before fleshing out the full hi-fi design. <br> </br> The coding lecture for this week was based around how to publish a usable website. We did this through GitHub and were shown the essential concepts and workflows. I had very little previous knowledge about repositories and how we actually store our website and their code so this helped clear that process up for me. The lecture also instilled in me the importance of correct documentation. When making changes to branches and repositories in GitHub, it is crucial to label those changes in a changelog and make sure you leave breadcrumbs for future you to follow. This was something I felt I was particularly lazy with so it helped spur me out of that idea for any upcoming web design projects.</p>
+            </div>
+            <div class="week-box" id="week-7">
+                <h3 class="title">Week 7</h3>
+                <p class="subheading">5th September - Composition & 2.1 Submission</p>
+                <img src="comp.avif" class="content-image" alt="Week 2 Image">
+                <p>During this tutorial, we went over various fundamental design principles. Topics included grids, visual hierarchy, color and typography, scale, white space, and balance. We also had an activity where we aimed at improving the visual techniques discussed earlier. <br> </br>
+
+                Additionally, Haowei went into the concept of affordances, which is a crucial design element that guides users on how to interact with a digital interface. Examples of affordances included functions like links, icons, and buttons, which play a pivotal role in shaping the user experience. <br> </br>
+
+                Towards the end of the tutorial Haowei recapped the details/requirements for the assignment 2.1 submission. She went over the wireframe, iteration, and style guide sections and what was required for each. She also went over how our final prototype should look. This gave me a clear checklist for my assignment which would help me with my submission over the next week.
+                </p>
+            </div>
+            <div class="week-box" id="week-8">
+                <h3 class="title">Week 8</h3>
+                <p class="subheading">12th September - Assignment 2.2 Introduction</p>
+                <img src="webflow.png" class="content-image" alt="Week 2 Image">
+                <p>We were introduced to assignment 2.2 this week. For me, I decided to take the CMS route as I had had some experience with them before and knew they would be a good thing to learn in my web design journey. CMS (content management systems) are very important in the web design industry as they allow creators (both independent & company based) to quickly and efficiently update websites, which can help to free up designers so we can focus on more creative endeavors. The idea of CMS templates is also handy to give new designers an easy framework to free up time for more creative arrangements. Despite my experience with Website builders, this week's lectures taught me about the other different platforms I could use to put a site together. The weekly site that was shown (Digital Eclipse) was also inspiring to me as it showed how effective simple layouts can be, while still remaining exciting due to animations and subtle visual interest with themed accents (in this case sci-fi buttons and dividing lines). 
+</p>
+            </div>
+            <div class="week-box" id="week-9">
+                <h3 class="title">Week 9</h3>
+                <p class="subheading">19th September - Responsive Design & Web Design Best Practices</p>
+                <img src="responsive.png" class="content-image" alt="Week 2 Image">
+                <p>In this lecture we learnt about responsive web design principles. We learnt about concepts such as fluid grids, flexible images and media queries. We learnt that responsiveness in web design is important because it ensure the website adapts to the user and their chosen device. This is important as it allows the user to view the site in whatever way is most comfortable for them, ensuring a positive user experience. Responsiveness also makes websites more consistent across devices. Leading on from this we also learnt about the different testing methods we can use for web responsiveness such as emulating different screen sizes and usability testing. <br> </br> In this lecture we also learnt about the best practices for file organisation in terms of structure, naming conventions, and asset management. As mentioned previously, this is something my eyes tend to glaze over at the thought of but the lecture reminded me of its importance in terms of organisation and efficiency. </p>
+            </div>
+            <div class="week-box" id="week-10">
+                <h3 class="title">Week 10</h3>
+                <p class="subheading">26th September - Assignment 2.2 Submission</p>
+                <img src="html1.png" class="content-image" alt="Week 2 Image">
+                <p>This week we went over the submission requirements for assignment 2.2 which was due the following week. This was all pretty straightforward as I was using WebFlow for my website. We also got some clarity on assignment 3 as we were shown Shiv's exemplar. This was very helpful for me to see an example of a layout for this project. His assignment was grid based which lined up with what we have been taught in the coding lectures so far. After seeing Shiv's exemplar, we touched on different blog styles we might go for. For my assignment I wanted to have a prominent sidebar showing each week that you could scroll and select as a kind of timeline.</p>
+            </div>
+            <div class="week-box" id="week-11">
+                <h3 class="title">Week 11</h3>
+                <p class="subheading">3rd October - Assignment 2.2 Presentations & Assignment 3</p>
+                <img src="html2.png" class="content-image" alt="Week 2 Image">
+                <p>There was no lecture/tutorial this week as we were just doing our presentations for assignment 2.2. During this week I also started working on my assignment 3, coming to a final idea for my blog's layout. I looked at some html templates to get a better idea of what I could achieve. I had the idea of keeping all of the content on the same page, just hidden away until you select any specific week. I wanted to create a more dynamic site with animations in a timeline but I figured that was out of the scope of this particular project.</p>
+            </div>
+            <div class="week-box" id="week-12">
+                <h3 class="title">Week 12</h3>
+                <p class="subheading">10th October - Course Wrap-Up</p>
+                <img src="html3.png" class="content-image" alt="Week 2 Image">
+                <p>In week 12 we focused on making sure we were on track for the assignment 3 handin. The importance of reflective thinking and relating to our individual design experience for the weekly blogs was emphasised. This was a part of the assignment I hadn't expected as I'd done a more simplified summary of each week's content and I hadn't done much week-by-week reflection in other courses. I found going back through some of the week's summaries to be quite helpful at the end of the course as it gave me a refresher and recalled old information. This will help me to retain more of the information - especially now that I've written it all out as a proper design output. <br> </br> In this tutorial we also participated in a group redesign task where we worked together to redesign an e-commerce candle company. Throughout the course, I found the group design activities quite enjoyable and felt like I was learning a lot about working with other designers. This is a pretty important skill to learn too as most of my future work will be collaborative. </p>
+            </div>
+            <!-- Add week-box sections for all 12 weeks -->
+        </div>
+    </div>
+    <script>
+        // Show the initial week (e.g., Week 1)
+        showWeek(1);
+    </script>
+</body>
+</html>
